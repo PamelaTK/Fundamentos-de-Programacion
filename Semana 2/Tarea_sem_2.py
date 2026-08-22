@@ -5,58 +5,64 @@ precio_mayorE= 45
 descuento_3ra_edad= 0.12
 descuento_prof= 0.10
 descuento_stud= 0.10
+
 print("Bienvenido al Museo de Antropología e Historia")
+visitors= int(input("¿Cuantas personitas se nos unen hoy?: "))
 
-visitantes_tot= int(input("¿Cuántas personas nos acompañan el día de hoy?: "))
-total_a_pagar=0.0
-visitantes_registrados=0
+tot_gen= 0
 
-while visitantes_registrados < visitantes_tot:
-    print("Datos del Visitante")
-    
-    edad= int(input("Ingrese la edad del visitante (o ingrese 841 para SALIR): "))
-    
-    if edad==841:
-        print("Gracias por usar el sistema de registro, vuelva pronto.")
-        break
+for i in range (visitors):
 
-    elif edad < 3:
-        precio_base= precio_menor3
-        print("Niño menor de 3 años - Costo: 0.00")
+    print(f"\n Info Visitante {i+1} ")
+    age = int(input("ingrese la edad del visitante: "))
 
-    elif edad >= 3 and edad <= 17:
-        print("Menor de edad - Costo: 30.00")
-        precio_base= precio_menorE
-        
-    else:
-        print("Adulto - Costo: 45.00")
-        precio_base= precio_mayorE
-
-    if precio_base==0:
-        total_a_pagar= total_a_pagar + 0
-        visitantes_registrados= visitantes_registrados + 1
+    if age < 0:
+        print("Ingrese una edad válida.")
         continue
+    elif age < 3:
+        price= precio_menor3
 
-    print("Responda con 'si' o 'no'")
-    es_profesor= str(input("¿Es profesor?: "))
-    es_estudiante= str(input("¿Es estudiante?: "))
-    es_adulto_mayor= str(input("¿Es adulto mayor?: "))
+        print("El visitante es menor de 3 años, costo entrada: 0.00")
 
-    descuento_aplicado=0.0
-    tipo_descuento="Ninguno"
+        print(f"Su total es ${tot_gen:.2f}")
+        print("N/A descuento")
+        print(f"Total a pagar: ${tot_gen:.2f}")
 
-    if edad >= 60:
-        descuento_aplicado= precio_base * descuento_3ra_edad
-        tipo_descuento="Adulto Mayor 12%"
-    elif es_profesor=="si" and es_estudiante=="no":
-        descuento_aplicado= precio_base * descuento_prof
-        tipo_descuento="Profesor 10%"
-    elif es_estudiante=="si" and es_profesor=="no":
-        descuento_aplicado= precio_base * descuento_stud
-        tipo_descuento="Estudiante 10%"
-    elif es_profesor=="si" and es_estudiante=="si":
-        # Si tiene ambos, se queda con el de profesor por orden de la tabla
-        descuento_aplicado= precio_base * descuento_prof
-        tipo_descuento="Profesor (Descuento Único)"
+        tot_gen += price
+
+        continue
+    elif age >= 3 and age <= 17:
+        price= precio_menorE
     else:
-        descuento_aplicado=0.0
+        price= precio_mayorE
+
+    ####################################################################    
+    tipo = input(
+        "Tipo de visitante: \n1. Profesor \n2. Estudiante \n3. Adulto Mayor \n4. Ninguno \nIngrese el número correspondiente: ")
+    
+    if tipo == "1": 
+        porcentaje_descuento = descuento_prof
+        tipo_descuento = "Profesor 10%"
+
+    elif tipo == "2":
+        porcentaje_descuento = descuento_stud
+        tipo_descuento = "Estudiante 10%"
+
+    elif tipo == "3":
+        porcentaje_descuento = descuento_3ra_edad
+        tipo_descuento = "Adulto Mayor 12%"   
+
+    elif tipo == "4":
+        porcentaje_descuento = 0
+        tipo_descuento = "Ninguno"
+
+    descuento_aplicado = price * porcentaje_descuento
+
+    gran_tot = price - descuento_aplicado
+
+    print(f"Su total es ${price:.2f}")
+    print(f"Descuento aplicado: ${descuento_aplicado:.2f}")
+    print(f"Total a pagar: ${gran_tot:.2f}")
+
+    tot_gen += gran_tot
+    print(f"\nTotal a pagar por el grupo: ${tot_gen:.2f}")

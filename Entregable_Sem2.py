@@ -1,19 +1,75 @@
-#Actividad Evaluable Semana 2
-print("Bienvenido al Museo de Antropología e Historia")
+precio_infantil = 0
+precio_menor_edad = 30
+precio_mayor_edad = 45
 
-num_visitantes = int(input("¿Cuántos visitantes tendremos hoy? -Ingrese un valor en números enteros- :"))
+descuento_3ra_edad = 0.12
+descuento_profesor = 0.10
+descuento_estudiante = 0.10
 
-total_final_grupo = 0
+print("--- SISTEMA DE COBRO: MUSEO ---")
 
-precio_base_menor3 = 0
-precio_base_menores_edad = 30
-precio_base_adultos = 45
+total_visitantes = int(input("¿Cuántos visitantes son en total?: "))
 
-for visitante in range(num_visitantes):
-    edad = int(input(f"Ingrese la edad del visitante {visitante + 1}: "))
+total_general_pagar = 0.0
+visitantes_procesados = 0
+
+while visitantes_procesados < total_visitantes:
+    print("\n--- Datos del Visitante ---")
+    
+    edad = int(input("Ingrese la edad del visitante (o ponga 999 para SALIR): "))
+    
+    if edad == 999:
+        print("Se detiene el registro por el usuario.")
+        break
+
     if edad < 3:
-        print("El visitante es menor de 3 años, por lo que no paga entrada.")
-    elif 3 <= edad < 18:
-        print("El visitante es menor de edad, por lo que paga la entrada reducida.")
+        precio_base = precio_infantil
+    elif edad >= 3 and edad <= 17:
+        precio_base = precio_menor_edad
     else:
-        print("El visitante es adulto, por lo que paga la entrada completa.")
+        precio_base = precio_mayor_edad
+
+    if precio_base == 0:
+        print("Resultado: Niño menor de 3 años - Entrada Gratis ($0.00)")
+        total_general_pagar = total_general_pagar + 0
+        visitantes_procesados = visitantes_procesados + 1
+        continue
+
+    print("Responda con 'si' o 'no'")
+    es_profesor = input("¿Es profesor?: ")
+    es_estudiante = input("¿Es estudiante?: ")
+
+    descuento_aplicado = 0.0
+    tipo_descuento = "Ninguno"
+
+    if edad >= 60:
+        descuento_aplicado = precio_base * descuento_3ra_edad
+        tipo_descuento = "Adulto Mayor 12%"
+    elif es_profesor == "si" and es_estudiante == "no":
+        descuento_aplicado = precio_base * descuento_profesor
+        tipo_descuento = "Profesor 10%"
+    elif es_estudiante == "si" and es_profesor == "no":
+        descuento_aplicado = precio_base * descuento_estudiante
+        tipo_descuento = "Estudiante 10%"
+    elif es_profesor == "si" and es_estudiante == "si":
+        # Si tiene ambos, se queda con el de profesor por orden de la tabla
+        descuento_aplicado = precio_base * descuento_profesor
+        tipo_descuento = "Profesor (Descuento Único)"
+    else:
+        descuento_aplicado = 0.0
+        tipo_descuento = "Ninguno"
+
+    precio_final_individual = precio_base - descuento_aplicado
+    total_general_pagar = total_general_pagar + precio_final_individual
+
+    
+    print(f"Subtotal: ${precio_base:.2f}")
+    print(f"Descuento: -${descuento_aplicado:.2f} ({tipo_descuento})")
+    print(f"Total de este boleto: ${precio_final_individual:.2f}")
+    
+    visitantes_procesados = visitantes_procesados + 1
+
+print("\n==========================================")
+print(f"Total de visitantes cobrados: {visitantes_procesados}")
+print(f"TOTAL GENERAL A PAGAR: ${total_general_pagar:.2f}")
+print("==========================================")

@@ -1,7 +1,10 @@
 ### Información General
 Nombre: Ana Pamela Tintori Krieg
+
 Matrícula: 7291664
+
 Carrera: Ingeniería Mecatrónica
+
 Campus: Querétaro
 
 ### Compromiso de Integridad (Código de Honor):

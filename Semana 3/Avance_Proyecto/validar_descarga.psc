@@ -1,78 +1,62 @@
 Algoritmo validar_descarga
-	Definir empresa Como Caracter
-	definir permiso Como Caracter
-	definir tipo_permiso Como Caracter
-	definir permiso_valido Como Logico
-	definir volumen_agua Como Real
-	definir contiene_quimicos como lógico
-	definir cantidad_quimicos como entero
-	definir sustancia Como Caracter
-	definir concentracion como real
-	definir limite como real
-	definir acceso Como Logico
-	definir contador Como Entero
-	
+	Definir empresa Como Cadena
+	Definir permiso Como Cadena
+	Definir tipo_permiso Como Cadena
+	Definir permiso_valido Como Logico
+	Definir volumen_agua Como Real
+	Definir contiene_quimicos Como Logico
+	Definir cantidad_quimicos Como Entero
+	Definir sustancia Como Cadena
+	Definir concentracion Como Real
+	Definir limite Como Real
+	Definir acceso Como Logico
+	Definir contador Como Entero
 	acceso <- Verdadero
-	
-	Escribir "Nombre de la empresa:"
-	leer empresa
-	
-	Escribir "Número de permiso:"
+	Escribir 'Nombre de la empresa:'
+	Leer empresa
+	Escribir 'NÃºmero de permiso:'
 	Leer permiso
-	
-	Escribir "Tipo de permiso:" 
+	Escribir 'Tipo de permiso:'
 	Leer tipo_permiso
-	
-	Si tipo_permiso <> "CONAGUA-01-001" y tipo_permiso <> "CONAGUA-01-011" entonces 
-		escribir "ACCESO DENEGADO"
+	Si tipo_permiso<>'CONAGUA-01-001' Y tipo_permiso<>'CONAGUA-01-011' Entonces
+		Escribir 'ACCESO DENEGADO'
 		acceso <- Falso
 	FinSi
-	
-	si acceso = Verdadero Entonces
-		escribir "¿El permiso está en regla? (Verdadero/Falso)"
-		leer permiso_valido
-		
-		si permiso_valido = falso Entonces
-			escribir "ACCESO DENEGADO"
-			acceso <- falso
+	Si acceso=Verdadero Entonces
+		Escribir "Â¿El permiso estÃ¡ en regla? (Verdadero/Falso)'
+		Leer permiso_valido
+		Si permiso_valido=Falso Entonces
+			Escribir 'ACCESO DENEGADO'
+			acceso <- Falso
 		FinSi
 	FinSi
-	
-	si acceso = verdadero Entonces
-		escribir"Cantidad de agua a descargar:"
-		leer volumen_agua
-		
-		escribir"¿El agua contiene sustancias químicas? (Verdadero/Falso):"
-		leer contiene_quimicos
-		
-		Si contiene_quimicos = verdadero Entonces
-			escribir"¿Cuántas sustancias contiene?"
-			leer cantidad_quimicos
-			
-			para contador <- 1 hasta cantidad_quimicos hacer
-				Escribir "Nombre de la sustancia:"
-				leer sustancia
-				
-				escribir "Concentración en ppm:"
-				leer concentracion
-				
-				Escribir "Límite establecido en ppm:"
-				leer limite
-				
-				si concentracion > limite entonces 
-					escribir "ACCESO DENEGADO"
+	Si acceso=Verdadero Entonces
+		Escribir 'Cantidad de agua a descargar:'
+		Leer volumen_agua
+		Escribir 'Â¿El agua contiene sustancias quÃ­micas? (Verdadero/Falso):'
+		Leer contiene_quimicos
+		Si contiene_quimicos=Verdadero Entonces
+			Escribir 'Â¿CuÃ¡ntas sustancias contiene?'
+			Leer cantidad_quimicos
+			Para contador<-1 Hasta cantidad_quimicos Hacer
+				Escribir 'Nombre de la sustancia:'
+				Leer sustancia
+				Escribir 'ConcentraciÃ³n en ppm:'
+				Leer concentracion
+				Escribir 'LÃ­mite establecido en ppm:'
+				Leer limite
+				Si concentracion>limite Entonces
+					Escribir 'ACCESO DENEGADO'
 					acceso <- Falso
 				FinSi
 			FinPara
 		FinSi
 	FinSi
-	
-	Si acceso = Verdadero Entonces
-		Escribir "Datos de la empresa"
-		Escribir "Empresa:", empresa
-		Escribir "Número de permiso:", permiso
-		Escribir "Tipo de permiso:" , tipo_permiso
-		Escribir "De acuerdo, tiene autorización para proseguir con su desecho."
+	Si acceso=Verdadero Entonces
+		Escribir 'Datos de la empresa'
+		Escribir 'Empresa:', empresa
+		Escribir 'NÃºmero de permiso:', permiso
+		Escribir 'Tipo de permiso:', tipo_permiso
+		Escribir 'De acuerdo, tiene autorizaciÃ³n para proseguir con su desecho.'
 	FinSi
-	
 FinAlgoritmo

@@ -38,7 +38,7 @@ for i in range (visitors):
 
     ####################################################################    
     tipo = input(
-        "Tipo de visitante: \n1. Profesor \n2. Estudiante \n3. Adulto Mayor \n4. Ninguno \nIngrese el número correspondiente: ")
+  "Tipo de visitante: \n1. Profesor \n2. Estudiante \n3. Adulto Mayor \n4. Ninguno \nIngrese el número correspondiente: ")
     
     if tipo == "1": 
         porcentaje_descuento = descuento_prof

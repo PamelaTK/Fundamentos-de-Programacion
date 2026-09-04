@@ -1,24 +1,30 @@
+matriz = []
+for fila in range(1,11):
+    renglon = []
+    for columna in range(1, 11):
+        renglon.append(fila*columna)
+    matriz.append(renglon)
+
+def imprimir_tabla(tabla):
+    print("     ", end="")
+    for columna in range (1,11):
+        print(columna,end="\t")
+    print()
+
+    for i in range (len(tabla)):
+        print(i + 1, end="\t")
+        for elemento in tabla [i]:
+            print (elemento, end="\t")
+        print()
+
+def consultar_producto(tabla, renglon, columna):
+    return tabla [renglon - 1][columna - 1]
+
+imprimir_tabla(matriz)
+
+renglon = int(input("Ingresa un coordenada: "))
+columna = int(input("Ingresa una más: "))
+resultado = consultar_producto( matriz, renglon, columna)
 
 
-
-
-matriz = [[" " , 1 , 2], [3 , 4 , 5], [5 , 6 , 7], [8 , 9 , 10]]
-for fila in matriz:
-    for elemento in fila:
-        print(elemento,end=" ")
-        print("")
-    cant = 10
-    print("   ", end="")
-    for f in range (1, cant + 1):
-        for c in range (1, cant+ 1):
-            print(f * c, end="  ")
-            print ( )
-
-
-
-
-c1 = int(input("Ingresa una coordenada: "))
-c2 = int(input("Ingresa una más: "))
-
-coordenadas = c1*c2
-print (coordenadas)
+print(f"El producto de {renglon} x {columna} es {resultado}")

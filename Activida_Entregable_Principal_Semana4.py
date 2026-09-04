@@ -1,3 +1,6 @@
+#programa diseñado para generar una tabla de pitágoras de 10x10 utilizando una matriz. La tabla se muestra de forma ordenada (sin usar corchetes ni comas)
+#El código procede a pregintar dos coordenadas (una del renglón superior horizontal, y una de la columna izquierda vertical). Al hacer esto nos imprimirá el valor que se encuentra en dichas coordenadas.
+
 matriz = []
 for fila in range(1,11):
     renglon = []
@@ -6,7 +9,7 @@ for fila in range(1,11):
     matriz.append(renglon)
 
 def imprimir_tabla(tabla):
-    print("     ", end="")
+    print("\t", end="")
     for columna in range (1,11):
         print(columna,end="\t")
     print()

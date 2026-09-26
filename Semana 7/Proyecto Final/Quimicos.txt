@@ -1,0 +1,11 @@
+Registro de Sustancias Quimicas
+
+Fecha: (1, 2, 3)
+Empresa: timito and co
+Sustancia: cianuro 
+Concentración: 0.3 ppm
+
+Fecha: (1, 2, 3)
+Empresa: timito and co
+Sustancia: cobalto
+Concentración: 0.4 ppm

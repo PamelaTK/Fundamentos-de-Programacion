@@ -1,0 +1,3 @@
+Registro de Descargas de Agua
+Fecha: ('05', '06', '10')
+Descarga de prueba

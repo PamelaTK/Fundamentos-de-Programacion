@@ -1,0 +1,6 @@
+Registro de Permisos del Sistema
+
+Fecha: (1, 2, 3)
+Empresa: timito and co
+Número de permiso: PER123
+Tipo de permiso: CONAGUA-01-001

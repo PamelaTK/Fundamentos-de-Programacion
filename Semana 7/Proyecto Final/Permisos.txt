@@ -4,3 +4,23 @@ Fecha: (1, 2, 3)
 Empresa: timito and co
 Número de permiso: PER123
 Tipo de permiso: CONAGUA-01-001
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Número de permiso: PER123
+Tipo de permiso: CONAGUA-01-001
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Número de permiso: PER-123
+Tipo de permiso: CONAGUA-01-001
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Número de permiso: per123
+Tipo de permiso: CONAGUA-01-001
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Número de permiso: PER113
+Tipo de permiso: CONAGUA-01-001

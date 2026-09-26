@@ -9,3 +9,33 @@ Fecha: (1, 2, 3)
 Empresa: timito and co
 Sustancia: cobalto
 Concentración: 0.4 ppm
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Sustancia: cianuro
+Concentración: 0.1 ppm
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Sustancia: 
+Concentración: 0 ppm
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Sustancia: mercurio
+Concentración: 0.1 ppm
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Sustancia: cianuro
+Concentración: 0.1 ppm
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Sustancia: cianuro
+Concentración: 1.0 ppm
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Sustancia: mercurio
+Concentración: 1.0 ppm

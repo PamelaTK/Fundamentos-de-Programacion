@@ -1,3 +1,9 @@
 Registro de Descargas de Agua
 Fecha: ('05', '06', '10')
 Descarga de prueba
+
+Fecha: (1, 2, 3)
+Empresa: pruebaco
+Número de permiso: PER113
+Tipo de permiso: CONAGUA-01-001
+Volumen de agua: 100000.0 litros

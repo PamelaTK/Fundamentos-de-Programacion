@@ -1,2 +1,0 @@
-Fecha:('05', '06', '10')
-primera prueba de descarga
